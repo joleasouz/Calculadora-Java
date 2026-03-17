@@ -29,8 +29,22 @@ public class Calculadora {
         //visibilidade
         painelVisores.add(visorEquacao);
         painelVisores.add(visorAtual);
-
         janela.add(painelVisores, BorderLayout.NORTH);
+
+        //botões
+        JPanel painelBotoes = new JPanel(new GridLayout(4, 4));
+        String[] textos = {
+            "7", "8", "9", "/",
+            "4", "5", "6", "*",
+            "1", "2", "3", "-",
+            "C", "0", "=", "+",
+        };
+
+        for(String texto : textos){
+            JButton btn = new JButton(texto);
+            painelBotoes.add(btn);
+        }
+        janela.add(painelBotoes);
 
         janela.setVisible(true);
     }
